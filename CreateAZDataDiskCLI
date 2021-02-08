@@ -1,0 +1,22 @@
+#Prerequisites
+#You will need to set variables if using the reference notation ie. "$" 
+#Set the following variables first when creating a new data disks in Az
+
+
+$resourcegroup = 'ekl-rg-03'
+$machinename = 'ekl-lab-vm-03'
+$location = 'West US'
+$storageType = 'Premium_LRS'
+$dataDiskName = 'newdisk01'
+$dataDiskName = 10
+
+$datadiskConfig = New-AzDiskConfig -SkuName $storageType -Location $location -CreateOption Empty -DiskSizeGB $dataDiskSize
+
+$dataDisk01 = New-AzDisk -DiskName $dataDiskName -Disk $datadiskConfig -ResourceGroupName $resourcegroup
+
+$vm = Get-AzVM -Name $machinename -ResourceGroupName $resourcegroup
+
+$vm = Add-AzVmDataDisk -VM $vm -Name $dataDiskName -CreateOption Attach -ManagedDiskId $dataDisk01.Id -Lun 1
+
+Update-AzVM -VM $vm -ResourceGroupName $resourcegroup
+
