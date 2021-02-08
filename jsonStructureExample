@@ -1,0 +1,28 @@
+#in this example you can see a sample structure of my json data table i created in reference to a review list for a website
+#you can catagorize the data by hierarcy and the "[]" displays the data array
+
+
+{
+  "ReviewsForCars": {
+    "Car": [
+      {
+        "Year": "2019",
+        "Make": "Honda",
+        "Model": "Civic",
+        "photo": "https://www.cnet.com/roadshow/reviews/2019-honda-civic-review/"
+      },
+      {
+        "Year": "2019",
+        "Make": "Honda",
+        "Model": "CR-V",
+        "photo": "https://www.motortrend.com/news/2019-honda-cr-v-ex-l-fwd-why-id-buy-it/"
+      },
+      {
+        "Year": "2019",
+        "Make": "Honda",
+        "Model": "Civic Type-R",
+        "photo": "https://www.caranddriver.com/honda/civic-type-r-2019"
+      }
+    ]
+  }
+}
